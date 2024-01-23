@@ -57,4 +57,43 @@ body {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
+
+  
+  /* FOOTER STYLES - for the key for color coding the blocks/classes of past, present, and future */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid white;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .key-item {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .color-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin-right: 5px;
+  }
+
+  .color-box.past {
+    background-color: #d3d3d3; /* Gray */
+  }
+
+  .color-box.present {
+    background-color: #ff6961; /* Red */
+  }
+
+  .color-box.future {
+    background-color: #77dd77; /* Green */
+  }
+
+
+
+
   
