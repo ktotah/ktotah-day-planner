@@ -115,3 +115,5 @@ body {
   .color-box.future {
     background-color: #77dd77; /* Green */
   }
+
+  /* NOTE: I didn't include any media queries as I tested vaarious screensizes to see how the application looked and, luckily, it fits well at all typical screensizes */

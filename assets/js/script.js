@@ -13,6 +13,11 @@ function updateTimeBlockClasses() {
     });
 }
 
+// Function to update the date display
+function updateDateDisplay() {
+    $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+}
+
 // Function to clear all events from the schedule
 function clearAllEvents() {
     // It loops through each time block from 9AM to 5PM, clears the associated data from each local storage, and resets the content of the textarea elements.
@@ -24,9 +29,6 @@ function clearAllEvents() {
 
 // The main jQuery ready function for all code that interacts with the DOM
 $(function () {
-    // Display the current date in the header of the page
-    $('#currentDay').text(dayjs().format('dddd, MMMM D'));
-
     // Click event for 'clear all events' button
     $('#clearEvents').on('click', function (){
         clearAllEvents();
@@ -53,11 +55,13 @@ $(function () {
         
     });
 
-    // Initial call to update the time block classes
+    // Initial call to set the date and time block classes
+    updateDateDisplay();
     updateTimeBlockClasses();
 
-    // Set up an interval to run the updateTimeBlockClasses function every 60 seconds to keep the classes/colors updated
+    // Set up intervals to run the updateDateDisplay and updateTimeBlockClasses functions every 60 seconds to keep the displayed date and classes/colors updated
     setInterval(function() {
+        updateDateDisplay();
         updateTimeBlockClasses();
     }, 60000); // Every 60 seconds
   });
