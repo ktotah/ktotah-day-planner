@@ -18,10 +18,14 @@ $(function () {
 
     // Display the current date in the header of the page
     $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+    // Also display the current time in a 12-hour format with AM/PM
+    var currentTime = dayjs().format('h:mm A'); // 'h' for hour, 'mm' for minutes, 'A' for AM/PM
+    $('<p>').text(currentTime).appendTo('#currentDay');
 
     // Function to update the time block classes
     function updateTimeBlockClasses() {
-        var currentHour = dayjs().hour();
+        var currentHour = dayjs().hour(); // gets the current hour using Day.js
+        console.log("The current hour is: " + currentHour); // internal - so I can check what currentHour is set to in the console log
         $('.time-block').each(function() {
             var blockHour = parseInt($(this).attr('id').replace('hour-', ''));
             if (blockHour < currentHour) {
@@ -34,5 +38,6 @@ $(function () {
         });
     }
 
+    
   });
   
