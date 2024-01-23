@@ -38,6 +38,9 @@ $(function () {
         var hourId = $(this).parent().attr('id'); // Get the 'hour-x' id of the containing time-block
         var eventText = $(this).siblings('.description').val(); // Get the user input from the sibling textarea element
         localStorage.setItem(hourId, eventText); // Save the user input in local storage
+
+        // Show confirmation message
+        $('#confirmationMessage').fadeIn(500).delay(1000).fadeOut(500); // Gradually makes the opacity for 0 to 1 over 500 milliseconds, Keeps the element visible for 10000 milliseconds (10 seconds), Gradually changes the opacity from 1 to 0 over 500 milliseconds
     });
 
     // Retrieve and display saved user input from local storage
