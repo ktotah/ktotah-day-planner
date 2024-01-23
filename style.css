@@ -3,6 +3,21 @@ body {
     font-size: 16px;
   }
   
+
+  /*  Styling for the Clear All Events button */
+  .clear-button {
+    padding: 10px 20px; 
+    background-color: lightblue;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .clear-button:hover {
+    background-color: plum; /* change button bg color on hover */
+  }
+
+
+
   textarea {
     background: transparent;
     border: none;
