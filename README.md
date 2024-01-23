@@ -8,6 +8,7 @@
 - [Screenshots](#screenshots)
 - [Testing](#testing)
 - [Auhtor and Acknowledgment](#author-and-acknowledgment)
+- [License](#license)
 
 ## Description
 
