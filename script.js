@@ -2,14 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-    // TODO: Add a listener for click events on the save button. This code should use the id in the containing time-block as a key to save the user input in local storage. HINT: What does `this` reference in the click listener function? How can DOM traversal be used to get the "hour-x" id of the time-block containing the button that was clicked? How might the id be useful when saving the description in local storage?
-    //
-    // TODO: Add code to get any user input that was saved in localStorage and set
-    // the values of the corresponding textarea elements. HINT: How can the id
-    // attribute of each time-block be used to do this?
-    //
-
-
     // Display the current date in the header of the page
     $('#currentDay').text(dayjs().format('dddd, MMMM D'));
     // Also display the current time in a 12-hour format with AM/PM
@@ -32,12 +24,38 @@ $(function () {
         });
     }
 
-    // Call the function to update the classes initially
+    // Click event for save buttons
+    $('.saveBtn').on('click',function() {
+        // 'this' refers to the button that was clicked
+        var hourId = $(this).parent().attr('id'); // Get the 'hour-x' id of the containing time-block
+        var eventText = $(this).siblings('.description').val(); // Get the user input from the sibling textarea element
+        localStorage.setItem(hourId, eventText); // Save the user input in local storage
+    });
+
+    // Retrieve and display saved user input from local storage
+    $('.time-block').each(function() {
+        var hourId = $(this).attr('id'); // Get the 'hour-x' id of the time-block
+        var savedEvent = localStorage.getItem(hourId); // Get the saved user input from local storage
+        if (savedEvent) {
+            $(this).find('.description').val(savedEvent); // If there is a saved event, set the value of the textarea to the saved user input
+        }
+    });
+
+    // Function to clear events at midnight
+    function clearEventsAtMidnight() {
+        var currentHour = dayjs().hour();
+        if (currentHour === 0) {
+            for (var hour = 9; hour <= 17; hour++) {
+                localStorage.removeItem('hour-' + hour);
+                $('#hour-' + hour).find('.description').val(''); // clears the textareas
+            }
+        }
+    }
+
+    // Call the update function and clear events at midnight function when the page initially loads 
     updateTimeBlockClasses();
 
     // Set up an interval to run the function every 60 seconds to keep the classes/colors updated
     setInterval(updateTimeBlockClasses, 60000); // every 60 seconds
-
-    
   });
   
