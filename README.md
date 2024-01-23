@@ -7,7 +7,7 @@
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Testing](#testing)
-- [Author and Acknowledgment](#author-and-acknowledgement)
+- [Auhtor and Acknowledgment](#author-and-acknowledgment)
 
 ## Description
 
@@ -27,7 +27,7 @@ The deployed application can be viewed here: [https://ktotah.github.io/ktotah-da
 ## Usage
 To use the Work Day Scheduler, follow these steps:
 
-1. Open the [deployed application](#deployed-application) in your browser.
+1. Open the deployed application in your browser.
 2. Click into a time block for the desired hour.
 3. Enter the event details and click the save button for that time block.
 4. The event will be saved and persist even after the browser is closed or refreshed.
@@ -36,11 +36,6 @@ To use the Work Day Scheduler, follow these steps:
 
 Here is a screenshot of the deployed application:
 ![Work Day Schedule Site Screenshot](assets/media/screenshot.png)
-
-### Scheduler Overview
-![Screenshot of the Work Day Scheduler](path-to-your-screenshot.png)
-### Event Entry
-![Screenshot of entering an event](path-to-your-screenshot.png)
 
 ## Testing
 
@@ -57,4 +52,4 @@ For further testing, you can manually test the application by following the [usa
 - **[Katy Totah]** - *Initial work* - [Katy Totah](https://github.com/ktotah)
 
 ## License
-This project is licensed under the [MIT License](link-to-your-license-file).
+This project is released under the [MIT License](./LICENSE).
