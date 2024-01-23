@@ -38,6 +38,12 @@ $(function () {
         });
     }
 
+    // Call the function to update the classes initially
+    updateTimeBlockClasses();
+
+    // Set up an interval to run the function every 60 seconds to keep the classes/colorsupdated
+    setInterval(updateTimeBlockClasses, 60000); // every 60 seconds
+
     
   });
   
